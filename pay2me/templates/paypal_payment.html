@@ -1,0 +1,49 @@
+<h4>Pay with PayPal</h4>
+{{ fm_paypal.render }}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paytm merchant payment page</title>
+</head>
+<body>
+
+<button type="submit" onclick="showDiv()" style="  margin-top:30px; background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width:10%;
+  text-align: center;
+  height:35px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;">Pay with Paytm
+</button>
+<div id="show" style="display:none;">
+    <h1>Redirecting you to the merchant....</h1>
+    <h1>Please do not refresh your page....</h1>
+    <form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm">
+        {% for key, value in fm_paytm.items %}
+        <input type="hidden" name="{{key}}" value="{{value}}">
+        {% endfor %}
+    </form>
+</div>
+</body>
+<script>
+function showDiv() {
+   document.getElementById('show').style.display = "block";
+   document.paytm.submit()
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

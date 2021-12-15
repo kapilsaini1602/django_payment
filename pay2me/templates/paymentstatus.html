@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Payment Status</title>
+    <meta http-equiv="refresh" content="3;url=http://127.0.0.1:8000/pay"/>
+</head>
+<body>
+
+<div class="container">
+
+    {{response}}
+    <div class="col my-4">
+
+        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        ORDER SUCCESS
+        {% else %}
+        ORDER FAILURE
+        {% endif%}
+
+        <h3>Redirecting in 3 seconds...</h3>
+    </div>
+</div>
+</body>
+</html>
+
+

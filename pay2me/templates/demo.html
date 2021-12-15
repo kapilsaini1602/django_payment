@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <div class="row">
+        <h1 style="text-align: center; ">Purchase</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-4 col-lg-offset-4" style="text-align: center;">
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Email"
+                       style="width:25%; border-radius:10px; height:28px;text-align: center;"><br>
+                <input type="text" name="password" placeholder="Password"
+                       style="width:25%; border-radius:10px; height:28px;text-align: center;"><br>
+                <input type="text" name="ammount" placeholder="Ammount"
+                       style="width:25%; border-radius:10px; height:28px;text-align: center;"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
